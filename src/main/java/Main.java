@@ -5,7 +5,6 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         Race race = new Race();
-        System.out.println("'Завершить' — завершить работу программы");
 
         for (int i = 1; i <= 3; i++) {
             String name;
