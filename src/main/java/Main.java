@@ -19,19 +19,24 @@ public class Main {
                 } else {
                     while (true) {
                         System.out.println("— Введите скорость машины №" + i + ":");
-                        speed = scanner.nextInt();
 
-                        if (speed < 0 || speed > 250) {
-                            System.out.println("Укажите скорость в диапазоне от 0 до 250!");
+                        if (scanner.hasNextInt()) {
+                            speed = scanner.nextInt();
+                            if (speed <= 0 || speed > 250) {
+                                System.out.println("Укажите скорость в диапазоне от 0 до 250!");
+                            } else {
+                                break;
+                            }
                         } else {
-                            break;
+                            System.out.println("Введите числовое значение!");
+                            scanner.next();
                         }
                     }
                     break;
                 }
             }
             Car car = new Car(name, speed);
-            System.out.println(race.returnLeader(car).name);
+                System.out.println(race.returnLeader(car).name);
         }
         scanner.close();
     }
